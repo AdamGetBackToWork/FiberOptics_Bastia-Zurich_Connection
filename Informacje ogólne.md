@@ -33,3 +33,7 @@ ma działać
 10^-12 > wspolczynnik bitowy błedu
 czym mniejsza dyspersja tym 
 SMF Corning
+
+
+Program nazywa się OptiSystem (14)
+
