@@ -66,6 +66,8 @@ wzmocnienie_wzmacniaczy = ilosc_wzmacniaczy * wzmacniacz.wzmocnienie
 calk_tlumienie = oblicz_tlumienie_calkowite(t_lad, t_woda, t_spoin, t_zlacz)
 calk_wzmocnienie = wzmocnienie_wzmacniaczy
 
+calk_wzmocnienie_margines = calk_wzmocnienie + 3
+
 print("Wyliczony budżet mocy: ", int(oblicz_budzet(calk_tlumienie, calk_wzmocnienie)), "dB na wrotach Rx (tu fotodiody)")
 
 
