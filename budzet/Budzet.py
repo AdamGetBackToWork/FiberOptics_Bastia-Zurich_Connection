@@ -31,8 +31,8 @@ def oblicz_Ldcf(smf: Swiatlowod, dcf: Swiatlowod) -> float:
     return dyspersja_smf
 
 
-def oblicz_tlumienie_calkowite(t_smf, t_dcf, t_spoiny, t_zlacz):
-    return t_smf + t_dcf + t_spoiny + t_zlacz
+def oblicz_tlumienie_calkowite(t_lad, t_woda, t_spoiny, t_zlacz):
+    return t_lad + t_woda + t_spoiny + t_zlacz
 
 
 # obliczenie dlugosci na podstawie Lsmf = cala dlugosc trasy, Ldcf = dlugosc w szpuli
@@ -60,11 +60,19 @@ ilosc_spoin_woda = int(smf_woda.dlugosc / smf_woda.szpula)
 
 tlumienie_swiatlowodu_lad_smf = smf_lad.tlumienie * smf_lad.dlugosc
 tlumienie_swiatlowodu_lad_dcf = dcf_lad.tlumienie * dcf_lad.dlugosc
+t_lad = tlumienie_swiatlowodu_lad_smf + tlumienie_swiatlowodu_lad_dcf
 
 tlumienie_swiatlowodu_woda_smf = smf_woda.tlumienie * smf_woda.dlugosc
 tlumienie_swiatlowodu_woda_dcf = dcf_woda.tlumienie * dcf_woda.dlugosc
+t_woda = tlumienie_swiatlowodu_woda_smf + tlumienie_swiatlowodu_woda_dcf
 
 tlumienie_spoin_lad = ilosc_spoin_lad * spoina.tlumienie
 tlumienie_spoin_woda = ilosc_spoin_woda * spoina.tlumienie
+t_spoin = tlumienie_spoin_lad + tlumienie_spoin_woda
 
-ilosc_zlacz
+# wartosc przykladowa - tymczasowy bufor
+ilosc_zlacz = 2 + 2 + 2 # 2 zlacza na odcinek ladowy, 2 na wodny, 2 na jeden wzmacniacz
+t_zlacz = zlaczka.tlumienie * ilosc_zlacz
+
+print(oblicz_tlumienie_calkowite(t_lad, t_woda, t_spoin, t_zlacz))
+
