@@ -48,7 +48,6 @@ def oblicz_budzet(tlumienie, wzmocnienie):
 smf_lad = Swiatlowod(tlumienie=0.16, dlugosc=437, dyspersja=18, szpula=50.4)
 dcf_lad = Swiatlowod(tlumienie=0.265, dlugosc=0, dyspersja=-38, szpula=50.4)
 dcf_lad.dlugosc = oblicz_Ldcf(smf_lad, dcf_lad)
-print(dcf_lad.dlugosc)
 
 # tu dlugosci policzylem na kartce
 smf_woda = Swiatlowod(tlumienie=0.154, dlugosc=40, dyspersja=21, szpula=30)
